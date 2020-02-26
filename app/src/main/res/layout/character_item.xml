@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.khaledabdrabo.rickmortyapi.ui.character.CharacterViewModel" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="4dp"
+        android:layout_margin="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/fond1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/img_character"
+                app:mutableImage="@{viewModel.getCharacterImage()}"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:srcCompat="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/txt_character_name"
+                app:mutableText="@{viewModel.getCharacterName()}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/test"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/txt_character_info"
+                app:layout_constraintStart_toEndOf="@+id/img_character"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_character_info"
+                app:mutableText="@{viewModel.getCharacterInfo()}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/test"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@color/grey"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_character"
+                app:layout_constraintTop_toBottomOf="@+id/txt_character_name" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
