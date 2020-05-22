@@ -14,5 +14,6 @@ I developped a Rick and Morty themed Android application (with Kotlin) implement
  - and others...
 
 ### Screenshots from the application
-![screenshot1](Screenshots/screenshot1.jpg)
-![screenshot2](Screenshots/screenshot2.jpg)
+| List View  | Card View |
+| --- | --- |
+| ![screenshot1](Screenshots/screenshot1.jpg)  | ![screenshot2](Screenshots/screenshot2.jpg) |
